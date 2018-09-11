@@ -41,12 +41,12 @@ app.use(function(err, req, res, next) {
 });
 
 sequelize
-  .sync()
+  .authenticate()
   .then(() => {
-    console.log(`Models synced to database.`);
+    console.log('Connected to database.');
   })
   .catch(err => {
-    console.error(`Database sync unsuccessful.`);
+    console.error(`Database authentication unsuccessful: ${err}`);
   });
 
 module.exports = app;
