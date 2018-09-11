@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var todosRouter = require('./routes/todos');
+var indexRouter = require('./routes/index-router');
+var todosRouter = require('./routes/todos-router');
 
 var app = express();
 
@@ -48,4 +48,5 @@ sequelize
   .catch(err => {
     console.error(`Database sync unsuccessful.`);
   });
+
 module.exports = app;
