@@ -23,14 +23,14 @@ describe('GET /todos', () => {
   });
 });
 
-
 describe('POST /todos', () => {
-  const body = { name: 'check off previous todos', completed: false };
   it('returns the newly created todo', done => {
+    const body = { name: 'check off previous todos', completed: false };
+
     return request(app)
       .post('/todos')
       .send(body)
-      .expect((res) => res.body.id = 1)
-      .expect(200, { ...body, id: 1 }, done);
+      .expect((res) => res.body.id = 'fixed id')
+      .expect(200, { ...body, id: 'fixed id' }, done);
   });
 });
